@@ -1,20 +1,53 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<h1> 1. ng-if TEST </h1>
+<div *ngIf="true">
+  test
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+
+<div *ngIf="false">
+  test
+</div>
+
+<h1> 2. ng-template TEST </h1>
+<p>ng-template start</p>
+<ng-template>
+  <p>ng-template 변환 테스트 </p>
+</ng-template>
+<p>ng-template end</p>
+
+
+
+<ng-template [ngIf]="true">
+  <p>ng-template 변환 테스트 001 </p>
+</ng-template>
+
+<ng-template [ngIf]="false">
+  <p>ng-template 변환 테스트 002 </p>
+</ng-template>
+
+
+
+<!-- ng-container -->
+
+<div>
+  <h1> 3. ng-container TEST[적용전] </h1>
+  <ul *ngFor="let user of users">
+    <li *ngIf="user.length > 1">
+      {{user}}
+    </li>
+  </ul> 
+
+</div>
+
+<div>
+    <h1> 4. ng-container TEST[적용후] </h1>
+
+    <ng-container *ngFor="let user of users">
+        <ng-container  *ngIf="user.length > 1">
+          {{user}}
+        </ng-container>
+    </ng-container> 
+     
+</div>
+
 
